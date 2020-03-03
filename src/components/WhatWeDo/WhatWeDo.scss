@@ -1,0 +1,92 @@
+//import mixins-vars
+@import "../../mixins-vars";
+
+.WhatWeDo {
+  padding: 5.555rem 0;
+
+  .image-enter {
+    opacity: 0;
+  }
+
+  .image-enter-active {
+    opacity: 1;
+    transition: opacity 0.5s cubic-bezier(0.1, -0.6, 0.2, 0);
+  }
+
+  .image-exit {
+    opacity: 0;
+  }
+
+  .image-exit-active {
+    opacity: 1;
+    transition: opacity 0.5s cubic-bezier(0.1, -0.6, 0.2, 0);
+  }
+
+  .whatwedo-list {
+    &__image {
+      height: 250px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      @include media-breakpoint-up(md) {
+        height: 380px;
+      }
+    }
+
+    &__accordion {
+      .card {
+        border-radius: 2px;
+        border: 1px #e5e5e5 solid;
+
+        &:last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+
+      .card-header {
+        background-color: #fff;
+        cursor: pointer;
+        padding: 1.388rem 2.777rem 1.388rem 1.388rem;
+        height: 3.333rem;
+        line-height: 1.333rem;
+
+        &__icon {
+          font-size: 1.666rem;
+          color: $fir-green;
+        }
+
+        &__text {
+          font-size: 0.777rem;
+          color: $fir-dark;
+          text-transform: uppercase;
+          font-weight: 600;
+          font-family: $second-font-family;
+          line-height: 1.333rem;
+        }
+
+        &__arrow {
+          position: absolute;
+          right: 0.8rem;
+          font-size: 1.666rem;
+          color: #d0d0d0;
+          transform: rotate(0);
+          transition: transform 0.5s cubic-bezier(0.1, -0.6, 0.2, 0);
+        }
+
+        &.active {
+          .card-header__arrow {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .card-body {
+        padding: 1.388rem 2.777rem 1.388rem 1.388rem;
+        font-style: italic;
+        font-weight: 100;
+        font-size: 0.833rem;
+      }
+    }
+  }
+}

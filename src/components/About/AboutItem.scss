@@ -1,0 +1,35 @@
+//import mixins-vars
+@import "../../mixins-vars";
+
+
+.About {
+	.about-list {
+		&__item {
+			min-height: 250px;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		&__info {
+			color: #fff;
+			text-align: center;
+		}
+
+		&__icon {
+			font-size: 1.666rem;
+			display: block;
+		}
+
+		&__text {
+			text-transform: uppercase;
+			font-size: 1rem;
+			font-weight: 700;
+			font-family: $second-font-family;
+		}
+	}
+}

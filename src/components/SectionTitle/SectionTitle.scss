@@ -1,0 +1,33 @@
+//import mixins-vars
+@import "../../mixins-vars";
+
+.section {
+	&__head {
+		color: $fir-dark;
+		max-width: 954px;
+		margin: 0 auto;
+	}
+
+	&__top {
+		font-family: $title-font-family;
+		font-size: 1.333rem;
+	}
+
+	&__title {
+		font-size: 1.666rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-family: $second-font-family;
+	}
+
+	&__text {
+		font-family: $basic-font-family;
+		margin-bottom: calc(5.555rem/2);
+		font-size: 0.833rem;
+		color: $main;
+
+		@include media-breakpoint-up(md) {
+			margin-bottom: 5.555rem;
+		}
+	}
+}

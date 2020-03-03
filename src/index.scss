@@ -1,0 +1,221 @@
+//import fonts
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap");
+
+//import mixins-vars
+@import "./mixins-vars";
+
+//import bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+//body styles
+body,
+html {
+  font-family: $basic-font-family;
+  font-feature-settings: "liga" 0;
+  font-variant-ligatures: none;
+  color: $main;
+  background-color: #fff;
+  position: relative;
+  touch-action: manipulation;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+
+  @include media-breakpoint-up(md) {
+    font-size: 18px;
+  }
+}
+
+.section {
+  background-color: #fff;
+}
+
+//inputs
+input.form-control {
+  border-radius: 0px;
+  height: 2.222rem;
+  font-size: 0.777rem;
+  line-height: 1.4rem;
+  border: 1px solid #e7e7e7;
+  padding: 0.722rem;
+
+  &:focus {
+    box-shadow: none;
+    border: 1px $fir-green solid;
+  }
+
+  &::-webkit-input-placeholder {
+    font-style: italic;
+    font-size: 0.833rem;
+    color: #ccc;
+    font-weight: 400;
+    line-height: 1.333rem;
+  }
+
+  &::-moz-placeholder {
+    font-style: italic;
+    font-size: 0.833rem;
+    color: #ccc;
+    font-weight: 400;
+    line-height: 1.333rem;
+  }
+
+  /* Firefox 19+ */
+  &:-moz-placeholder {
+    font-style: italic;
+    font-size: 0.833rem;
+    color: #ccc;
+    font-weight: 400;
+    line-height: 1.333rem;
+  }
+
+  /* Firefox 18- */
+  &:-ms-input-placeholder {
+    font-style: italic;
+    font-size: 0.833rem;
+    color: #ccc;
+    font-weight: 400;
+    line-height: 1.333rem;
+  }
+}
+
+//buttons
+.btn {
+  border-radius: 0px;
+  min-height: 2.222rem;
+  font-size: 0.777rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.4rem;
+  padding: calc(0.722rem / 2) 0.722rem;
+}
+
+.btn-green {
+  @include color-button($fir-green);
+  color: #fff !important;
+  padding: calc(0.722rem / 2) 1.888rem;
+  box-shadow: none !important;
+}
+
+.btn-border {
+  @include button-variant(transparent, #fff, $fir-green, $fir-green);
+  padding: calc(0.722rem / 2) 1.888rem;
+  border-width: 0.166rem;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+//decorate border
+.decorate-border {
+  position: relative;
+  padding-bottom: 2.222rem;
+  margin-bottom: 2.222rem;
+
+  &:after {
+    content: "";
+    width: 3.333rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    height: 0px;
+  }
+
+  &--white {
+    &:after {
+      border-bottom: 3px #fff solid;
+    }
+  }
+
+  &--red {
+    &:after {
+      border-bottom: 3px $fir-red solid;
+    }
+  }
+}
+// border-decorate-left
+.border-decorate-left {
+  position: relative;
+  padding-left:3.889rem;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3.333rem;
+    height: 0;
+    border-bottom: 3px $fir-red solid;
+
+  }
+}
+
+//decorate-gradient
+.decorate-gradient {
+  position: relative;
+  transform: translate(0, 0);
+  @include transition(all 0.5s ease-in-out);
+
+  &__info {
+    z-index: -1;
+    opacity: 0;
+    position: relative;
+    @include transition(opacity 0.5s ease-in-out);
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(
+      to top,
+      rgba(252, 227, 138, 0.9) 0%,
+      rgba(243, 129, 129, 0.9) 100%
+    );
+    transform: scale(0);
+    @include transition(all 0.5s ease-in-out);
+  }
+
+  &:hover {
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px 0 0px $fir-green;
+
+    &:after {
+      z-index: 1;
+      transform: scale(1);
+    }
+
+    .decorate-gradient__info {
+      z-index: 2;
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+//srcoll bar
+
+.track-vertical {
+  background-color: #f5f5f5;
+  height: 80%;
+  width: 5px;
+  border-radius: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0.5rem;
+  @include media-breakpoint-up(md) {
+    right: 1.388rem;
+  }
+}
+
+.thumb-vertical {
+  background-color: $fir-green;
+  border-radius: 10px;
+  cursor: pointer;
+}

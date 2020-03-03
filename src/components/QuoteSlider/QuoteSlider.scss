@@ -1,0 +1,47 @@
+//import mixins-vars
+@import "../../mixins-vars";
+
+.QuoteSlider {
+  background-color: $fir-grey;
+  padding: 3.889rem 0;
+
+  .carousel-inner {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  .carousel-item {
+    &__image {
+      width: 150px;
+      height: 150px;
+      flex: 0 0 auto;
+      border: 3px $fir-green solid;
+      align-items: center;
+      justify-content: center;
+      color: $fir-green;
+      font-size: 3.889rem;
+      margin-right: 3.333rem
+    }
+
+    &__text {
+      font-size: 1.333rem;
+      font-weight: 100;
+      font-style: italic;
+      margin-bottom: 1rem
+    }
+
+    &__author {
+      font-family: $title-font-family;
+      color: $fir-dark;
+      font-size: 1.333rem;
+    }
+  }
+  .carousel-control-prev, .carousel-control-next {
+    width: 5%;
+    font-size: 1.666rem;
+    color: #d0d0d0;
+    display: none;
+    @include media-breakpoint-up(md) {
+      display: flex;
+    }
+  }
+}

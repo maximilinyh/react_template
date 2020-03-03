@@ -1,0 +1,13 @@
+//import mixins-vars
+@import "../../mixins-vars";
+
+.Facts {
+  background-color: $fir-green;
+  .facts-list {
+    border: none;
+    @include media-breakpoint-up(lg) {
+      border-left: 1px rgba(255, 255, 255, 0.3) solid;
+      border-right: 1px rgba(255, 255, 255, 0.3) solid;
+    }
+  }
+}

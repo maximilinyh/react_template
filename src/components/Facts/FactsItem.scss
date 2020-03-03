@@ -1,0 +1,35 @@
+//import mixins-vars
+@import "../../mixins-vars";
+
+.Facts {
+	.facts-list {
+		&__item {
+			color: #fff;
+			text-align: center;
+			min-height: calc(270px/1.2);
+			border: none;
+
+			@include media-breakpoint-up(lg) {
+				border-right: 1px rgba(255, 255, 255, 0.3) solid;
+				min-height: 270px;
+
+				&:last-child {
+					border-right: 0;
+				}
+			}
+		}
+
+		&__title {
+			font-size: 4rem;
+			font-family: $second-font-family;
+			font-weight: 700;
+		}
+
+		&__text {
+			font-size: .777rem;
+			font-weight: 400;
+			font-family: $second-font-family;
+			text-transform: uppercase;
+		}
+	}
+}

@@ -1,0 +1,27 @@
+//import mixins-vars
+@import "../../mixins-vars";
+.Home {
+  .sticky-wrapper {
+    position: relative;
+    &.sticky {
+      .sticky-inner {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background-color: $fir-red;
+      }
+    }
+  }
+
+  .header-enter {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  .header-enter-active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.3s linear, opacity 0.3s linear;
+  }
+}

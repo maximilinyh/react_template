@@ -1,0 +1,29 @@
+//import mixins-vars
+@import "../../mixins-vars";
+
+.Services {
+  .services-list {
+    &__item {
+      margin-bottom: calc(5.555rem / 2);
+      @include media-breakpoint-up(sm) {
+        margin-bottom: 5.555rem;
+      }
+    }
+    &__icon {
+      color: $fir-green;
+      font-size: 1.666rem;
+    }
+    &__title {
+      font-size: 0.777rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $fir-dark;
+      font-family: $second-font-family;
+    }
+
+    &__text {
+      font-size: 0.833rem;
+      max-width: 270px;
+    }
+  }
+}
